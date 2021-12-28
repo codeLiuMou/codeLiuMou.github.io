@@ -1,0 +1,274 @@
+.content1{
+				/*border: 2px solid  black;*/
+				margin-top: 20px;
+				background: #f2f3f8;
+				width: 90%;
+				margin: auto;
+				height: 1350px;
+				overflow: hidden;
+			}
+			.content1 p{
+				width: 72%;
+				margin-left: 20%;
+				margin-top: 20px;
+				font-size: 15px;
+				/*border: 1px solid red;*/
+			}
+			.content1 p:nth-child(2){
+				color: blue;
+				font-size: 32px;
+				width: 70%;
+				margin: auto;
+				margin-top: 30px;
+				
+			}
+			
+			.content1 p a{
+				display: inline-block;	
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 2px dotted gray;
+			}
+			.content1 a:hover{
+				border-bottom: 2px solid  black;
+				transition: all 2s;
+			}
+			.sy3{
+				/*border: 1px solid red;*/
+				width: 20%;
+				margin: auto;
+				margin-top: 50px;
+			}
+			.sy4{
+				margin-top: 20px;
+			}
+			.content2{
+				width: 90%;
+				background:#F2F3F8 url(../img/sy5.gif) no-repeat;
+				background: auto;
+				display: flex;
+				margin: auto;
+				flex-wrap: wrap;
+				overflow: hidden;
+				justify-content: space-around;
+			}
+			.tx1 a{
+				color: black;
+			}
+			.ct-2{
+				width: 90%;
+				/*border: 2px solid red;*/
+				background: white;
+				/*height: 1500px;*/
+				margin-top: 50px;
+				box-shadow: 0px 0px 20px 10px #f8ebf2;
+				margin-top: 30px;
+			}
+			.ct-c p:first-child{
+				font-size: 30px;
+				color: blue;
+				font-family: "agency fb";
+				/*border: 1px solid red;*/
+				width: 80%;
+				margin-left: 10%;
+				margin-top: 30px;
+			}
+			.ct-a p:first-child{
+				font-size: 12px;
+				width: 60%;
+				margin-left: 200px;
+				/*border: 2px solid blue;*/
+				color: black;
+			}
+			.ct-a p:nth-child(2){
+				font-size: 12px;
+				width: 60%;
+				margin-top: 20px;
+				margin-left: 200px;
+				border: 1px solid transparent;
+				color: black;
+			}
+			.ct-a{
+				margin-bottom: 40px;
+			}
+			.ct-b{
+				display: flex;
+				/*border: 1px solid red;*/
+				height: 500px;
+				/*border: 2px solid blue;*/
+				overflow: hidden;
+			}
+			.ct-bZ{
+				width: 50%;
+				border: 1px solid transparent;
+			}
+			.ct-bY{
+				width: 50%;
+			}
+			.ct-bY-one{
+				border: 1px solid transparent;
+				margin-top: 150px;
+			}
+			.ct-bY-one p:first-child{
+				font-size: 30px;
+				color: blue;
+				font-family: "agency fb";
+				/*border: 1px solid red;*/
+				width: 80%;
+				margin-left: 10%;
+				margin-top: 30px;
+			}
+			.ct-bY-one p:nth-child(2){
+				color:black;
+				font-family: "agency fb";
+				/*border: 1px solid red;*/
+				width: 80%;
+				margin-left: 10%;
+				margin-top: 30px;
+				font-size: 12px;
+			}
+			.ct-3{
+				height: 300px;
+				width: 90%;
+			}
+			.ct-3A p:first-child{
+				font-size: 30px;
+				color: blue;
+				text-align: center;
+				margin-top: 50px;
+				border: 1px solid transparent;
+			}
+			.ct-3A p:nth-child(2){
+				/*text-align: center;*/
+				/*border: 1px solid red;*/
+				width: 60%;
+				font-size: 14px;
+				margin-left: 30%;
+				margin-top: 20px;
+			}
+			.content2 img{
+				display: block;
+			}
+			.content3 img{
+				display: block;
+			}
+			.content3{
+				display: flex;
+				width: 90%;
+				margin: auto;
+			}
+			
+			.cnt-A{
+				width: 25%;
+				/*border: 1px solid transparent;*/
+			}
+			.cnt-B{
+				width: 25%;
+				/*border: 1px solid transparent;*/
+				
+			}
+			.cnt-C{
+				/*border: 1px solid  transparent;*/
+				width: 25%;
+				
+			}
+			.cnt-D{
+				/*border: 1px solid transparent;*/
+				width: 25%;
+				
+			}
+			.cnt-3a{
+				/*border: 2px solid red;*/
+				width: 100%;
+				position: relative;
+			}
+			.zzb{
+				width: 100%;
+				height: 100%;
+				background: white;
+				position: absolute;
+				bottom: 0;
+				background: rgba(0,0,0,0);
+			}
+			.cnt-3a:hover .zzb{
+				background: rgba(255,255,255,1);
+				transition: all 0.5s;
+			}
+			.wz_h{
+				text-align: center;
+				overflow: hidden;
+				display: block;
+				-webkit-transition: all 1s;
+				opacity: 0.0;
+				margin-top: 200px;
+			}
+			.wz_h p:first-child{
+				font-size: 24px;
+				font-weight: bold;
+			}
+			.cnt-3a:hover .wz_h{
+				height: 100px;
+				margin-top: 100px;
+				/*display: block;*/
+				opacity: 1;
+				-webkit-transition: all 1s;
+			}
+			.cnt-im22{
+				height: 551px;
+			}
+			.content4{
+				width: 90%;
+				margin: auto;
+				background: #F2F3F8;
+				overflow: hidden;
+			}
+			.content4 img{
+				display: block;
+			}
+			.ct4-a{
+				border: 2px solid blue;
+				border-radius: 5px;
+				width: 20%;
+				text-align: center;
+				margin: auto;
+				color: blue;
+				padding: 10px 0px 10px 0px;
+				margin-top: 50px;
+			}
+			.ct4-a:hover{
+				background: blue;
+				color:white;
+				transition: all 0.5s;
+			}
+			.ct4-ap{
+				font-size: 30px;
+				font-weight: bold;
+				text-align: center;
+				/*border: 1px solid red;*/
+				margin: auto;
+				margin-top: 50px;
+			}
+			.content5{
+				height: 300px;
+				width: 100%;
+			}
+			.sy-ft{
+				display: flex;
+				width:40%;
+				margin: auto;
+			}
+			.sy-ft_A{
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				z-index: -5;
+				text-align: center;
+			}
+			.sy-ft1{
+				/*text-align: center;*/
+				margin-top: 50px;
+			}
+			.sy-ft_A P{
+				font-size: 14px;
+				margin-top: 30px;
+			}

@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+.main{
+	height: 800px;
+	display: flex;
+	border: 1px solid  transparent;
+}
+.img{
+	border:1px solid transparent;
+	width: 45%;
+}
+.right{
+	width: 60%;
+	height: 100%;
+	border: 1px solid transparent;
+	background: #EEF3FA;
+}
+.content{
+	width: 80%;
+	height: 80%;
+	border: 1px solid transparent;
+	margin-top: 10%;
+	margin-left: 10%;
+	background: white;
+	text-align: center;
+}
+.for{
+	width: 60%;
+	height: 70%;
+	border: 1px solid transparent;
+	margin-left: 15%;
+	margin-top: 10%;
+}
+.for h3{
+	margin-top: 50px;
+}
+.for p{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.for button{
+	margin-right: 200px;
+	margin-top: 30px;
+	border-radius: 50px 50px;
+}

@@ -1,0 +1,125 @@
+.toggleBtn{
+	height: 40px;
+	position: relative;
+	overflow: hidden;
+}
+.toggleBtn>a{
+	position: absolute;
+	opacity: 0.5;
+}
+.toggleAnmtShow{
+	-webkit-animation: show 1s 1 forwards;
+	animation: show 1s 1 forwards;
+}
+@keyframes show{
+	from{top:40px}
+	to{
+		top:0px;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes show{
+	from{top:40px}
+	to{
+		top:0px;
+		opacity: 1;
+	}
+}
+.toggleAnmtHide{
+	-webkit-animation: hide 1s 1 forwards;
+	animation: hide 1s 1 forwards;
+}
+@keyframes hide{
+	from{top:0px}
+	to{
+		top:40px;
+		opacity: 0;
+	}
+}
+@-webkit-keyframes hide{
+	from{top:0px}
+	to{
+		top:40px;
+		opacity: 0;
+	}
+}
+
+
+/*头部固定用*/
+.headFixed{
+	background: white;
+}
+.tx1:hover{
+	border: none;
+}
+
+
+/*更棒的下划线!*/
+.newTx1 a{
+	position: relative;
+}
+.newTx1 a:hover{
+	border-bottom: none;
+}
+.newTx1 a .newBorder{
+	width: 0px;
+	height: 3px;
+	display: inline-block;
+	background: gray;
+	transition: all 1s;
+	position: absolute;
+	bottom: -3px;
+}
+.newTx1 a:hover .newBorder{
+	width: 100%;
+}
+
+/*小鼠标特效*/
+#mouse{
+	width: 30px;
+	height: 50px;
+	display: flex;
+	border: 2px solid rgba(255,255,255,0.4);
+	border-radius: 14px;
+	position: absolute;
+	bottom: 50px;
+	z-index: 1;
+	left: 50%;
+	margin-left: -15px;
+}
+#mouseInter{
+	width: 2px;
+	height: 0;
+	background: white;
+	margin: 10px auto;
+	-webkit-animation: mouse 2s infinite;
+	animation: mouse 2s infinite;
+}
+@keyframes mouse{
+	0{height:0}
+	50%{height:30px}
+	100%{height: 0;}
+}
+@-webkit-keyframes mouse{
+	0{height:0}
+	50%{height:30px}
+	100%{height: 0;}
+}
+/*返回顶部按钮*/
+#toTop{
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	line-height: 50px;
+	text-align: center;
+	position: fixed;
+	bottom: 10px;
+	right: 50px;
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+#toTop:hover{
+	background: rgba(50,50,50,1);
+}

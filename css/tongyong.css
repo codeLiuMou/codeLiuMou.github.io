@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+li{list-style:none;}
+			a{
+				text-decoration: none;
+			}
+			.logo{
+				height: 60px;
+				width: 50%;
+				/*border: 1px solid red;*/
+				margin-left: 50px;
+			}
+			nav{
+				width: 50%;
+				text-align: right;
+				margin-right: 50px;
+			}
+			header{
+				display: flex;
+				position: fixed;
+				top: 0;
+				z-index: 998;
+				
+				/*border: 1px solid red;*/
+				width: 100%;
+			}
+			
+			#erji:target {				/*显现*/
+				 visibility: visible;
+				 position:fixed;
+				 right:0%;
+				 background: black;
+				 transition: all 1s;
+				 -webkit-transition: all 1s;
+			}
+			#erji{						/*隐藏*/
+				height: 100%;
+				width: 40%;
+				z-index: 999;
+				background:black;
+				visibility: hidden;
+				text-align: center;
+				position: fixed;
+				right: -20%;
+				top: 100px;
+				transition: all 1s;
+				 -webkit-transition: all 1s;
+			}
+			.bjB{
+				width: 100%;
+				height: 0;
+				/*border: 1px solid red;*/
+				position: absolute;
+				
+				z-index: -5;
+			}
+			header:hover .bjB{
+				width: 100%;
+				height: 100%;
+				/*border: 1px solid red;*/
+				position: absolute;
+				background: white;
+				transition: all 0.5s;
+			}
+			
+			#erji p::before{ 
+				content:"-";
+				display: none;
+				/*border: 1px solid red;*/
+				background-color:yellow;
+				color:red;
+				font-weight:bold;
+			}
+			#erji a{
+				color: antiquewhite;
+			}
+			a:first-child:hover::before{
+				/*content:"-";*/
+				color: white;
+				transition: all 1s;
+				
+				display: inline-block;
+			}
+			.sd{
+				text-align: right;
+				width: :200px;
+				display: block;
+				font-size: 25px;
+				/*border: 1px solid red;*/
+			}
+			#erji ul li{
+				text-align: left;
+				/*border: 1px solid red;*/
+				width:300px;
+				margin-top: 20px;
+				margin-left: 80px;
+				/*z-index:-11 ;*/
+				position: relative;
+			}
+			
+			#erji ul a{
+				font-size: 30px;
+			}
+			#erji a:first-child{
+				margin-right: 40px;
+			}
+			.zza{
+				position: absolute;
+				width:100px;
+				height: 40px;
+				/*border: 2px solid red;*/
+				background: rgba(0,0,0,0.7);
+				top: 0px;
+				left: 0px;
+				-webkit-transition: width 2s;
+			}
+			.zza1{
+				position: absolute;
+				width:220px;
+				height: 40px;
+				/*border: 2px solid red;*/
+				background: rgba(0,0,0,0.7);
+				top: 0px;
+				left: 0px;
+				-webkit-transition: width 1s;
+			}
+			.zza2{
+				position: absolute;
+				width:270px;
+				height: 40px;
+				/*border: 2px solid red;*/
+				background: rgba(0,0,0,0.7);
+				top: 0px;
+				left: 0px;
+				-webkit-transition: width 2s;
+				/*border: 1px solid red;*/
+			}
+			#erji li:first-child:hover .zza{
+				width: 0px;
+				transition: all 1s;
+			}
+			#erji li:nth-child(2):hover .zza1{
+				width: 0px;
+				transition: all 1s;
+			}
+			
+			#erji li:nth-child(3):hover .zza1{
+				width: 0px;
+				transition: all 1s;
+			}
+			#erji li:nth-child(4):hover .zza2{
+				width: 0px;
+				transition: all 1s;
+			}
