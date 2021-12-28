@@ -1,0 +1,86 @@
+.abt{
+				margin-top: 2%;
+				width: 75%;			
+				margin: auto;
+				display: flex;
+				justify-content:center;
+				flex-wrap: wrap;
+				/*border: 1px solid ;*/
+			}
+			.abt-one,
+			.abt-two{
+				height: 420px;
+				color: white;
+				width:300px;
+				text-align: center;
+			}
+			.abt-one{
+				background:#1D2088;
+			}
+			.abt-two{
+				background:#036EB8;
+			}
+			.abt-center{
+				width: 80%;
+				margin: auto;
+				font-size:12px;
+				line-height: 26px;
+				margin-top: 20%;
+				margin-bottom: 12%;
+				color: white;
+			}
+			.abt-center p{
+				margin-top:20%;
+				color: white;
+			}
+			.abt-center span{
+				font-size: 24px;
+			}
+			.abt-img{
+				width: 50%;
+				margin: auto;
+			}
+			.abt-img img{
+				width: 35%;
+			}
+	.abt_pone{
+		font-weight: bold;
+		margin-top:5%;
+		font-size: 28px;
+	}
+			/*招兵买马*/
+			.zhaobing{
+				width: 40%;
+				margin: auto;
+				
+				margin-top:3%;
+			}
+			.zhaobing-top{
+				font-size: 24px;
+				
+			}
+			.zhaobing-top-box{
+				width: 60px;
+				border-bottom:4px solid #0ED2F7;
+			}
+			.zhaobing-box{
+				flex-wrap: wrap;
+				display: flex;
+				justify-content: space-between;
+				margin-top: 2%;
+				border-bottom: 1px solid #0ED2F7;
+			}
+			.zhaobing-left{
+				/*height: 290px;*/
+				width:40%;
+				font-size: 14px;
+				/*border: 1px solid red;*/
+			}
+			.zhaobing-right{
+				height: 290px;
+				width: 350px;
+				font-size: 14px;
+				line-height: 20px;
+				margin-bottom:3%;
+				/*border: 1px solid red;*/
+			}

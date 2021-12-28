@@ -1,0 +1,68 @@
+.aq_a1{
+	display: flex;
+	height: 50px;
+	border: 2px solid transparent;
+	align-items: center;
+	margin-top: 2%;
+	justify-content: space-around;
+}
+.aq_b1{
+	
+	width: 35%;
+	height: 2px;
+	border: 2px solid dodgerblue;
+}
+.aq_b2{
+	color: #3367D6;
+	font-size: 2vw;
+	font-weight: bold;
+}
+.aqdwcontact{
+	height: 800px;
+	width: 100%;
+	background-image: url(../img/aqdwbj.jpg);
+	background-size: cover;
+}
+.aq_wrap{
+	width: 70%;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+}
+.aqh3{
+	width:200px; 
+	border-left:3px solid #3367D6; 
+	
+	display:block; 
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+.aqdwbox1{
+	text-align: center;
+	width: 28%;
+	height: auto;
+	/*border: 1px solid blue;*/
+	border-radius: 2px;
+	box-shadow:0px 0px 5px 2px gainsboro;
+	margin-top: 20px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	background: white;
+}
+.aq_one{
+	
+	text-align: center;
+	width: 40%;
+	height: auto;
+	margin: auto;
+}
+.aq_atxt{
+	font-weight: bold;
+	color: #3367D6;
+	/*background-color: #3367D6;*/
+}
