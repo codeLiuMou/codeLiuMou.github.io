@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>vite-plugin-vue-devtools | Hexo</title><noscript>Please enable JavaScript to view the site</noscript><link rel="icon" href="/img/pwa/favicon.png"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=3.0.15"><!-- inject head--><link rel="canonical" href="http://example.com/2023/03/26/devtools/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="vite-plugin-vue-devtools前言之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。 vite"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Hexo"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.png"><link rel="apple-touch-icon" href="/img/pwa/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.15' + ' %c https://github.com/everfu/hexo-theme-solitude',
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>vite-plugin-vue-devtools | codeLM的博客</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.png"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://codeliumou.github.io/2023/03/26/devtools/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="vite-plugin-vue-devtools前言之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。 vite"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="codeLM的博客"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.png"><link rel="apple-touch-icon" href="/img/pwa/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
     'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
     'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
     'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
-</script><script>(()=>{
+</script><link rel="stylesheet" href="/css/custom.css?v=6"><script>(()=>{
         const saveToLocal = {
             set: function setWithExpiry(key, value, ttl) {
                 if (ttl === 0)
@@ -81,7 +81,13 @@
               utils.addGlobalFn('pjax', () => {
                   ele.removeEventListener(event, fn, option)
               })
-          },
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
         }
     })()</script><!-- theme--><script>initTheme = () => {
     let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -95,19 +101,19 @@
     }
     typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
 }
-initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+initTheme()</script><script>const GLOBAL_CONFIG = {
     root: '/',
     algolia: undefined,
     localsearch: undefined,
     runtime: '2023-04-20 00:00:00',
     lazyload: {
-        enable: false,
+        enable: true,
         error: '/img/error_load.avif'
     },
-    copyright: false,
+    copyright: {"limit":50,"author":"作者: codeLM","link":"链接: ","source":"来源: codeLM的博客","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
     highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
     randomlink: false,
-    lang: {"theme":{"dark":"Dark","light":"Light"},"copy":{"success":"Copied","error":"Copy failed"},"backtop":"Back to top","time":{"day":" days ago","hour":" hours ago","just":"just","min":" minutes ago","month":" months ago"},"day":" days","f12":"Developer mode is turned on, please follow the GPL.","totalk":"You don't need to delete blank lines, just type in your comments."},
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
     aside: {
         state: {
             morning: "✨ 早上好，新的一天开始了",
@@ -118,20 +124,20 @@ initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
         },
         witty_words: [],
         witty_comment: {
-            prefix: 'Long time no see, ',
-            back: 'Welcome back again,',
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
         },
     },
     covercolor: {
         enable: false
     },
     comment: false,
-    lightbox: 'null',
+    lightbox: 'mediumZoom',
     right_menu: false,
     translate: {"translateDelay":0,"defaultEncoding":2},
     lure: false,
     expire: false,
-};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+};</script><script id="config-diff">var PAGE_CONFIG = {
     is_post: true,
     is_page: false,
     is_home: false,
@@ -140,7 +146,8 @@ initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
     comment: false,
     ai_text: false,
     color: false,
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Archives</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>Display mode</span></span></div><span class="sidebar-menu-item-title">Tags</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/Infrastructure/">Infrastructure<sup>2</sup></a></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="Back to home"><span class="title">Solitude</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">vite-plugin-vue-devtools</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="This article is a Original article, pay attention to the copyright.">Original</a><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Infrastructure/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Infrastructure</span></a></div></div></div></div><h1 class="post-title">vite-plugin-vue-devtools</h1><div id="post-meta"><div class="meta-secondline"></div></div></div><div id="post-info-bottom"></div><article class="post-content article-container"><h1 id="vite-plugin-vue-devtools"><a href="#vite-plugin-vue-devtools" class="headerlink" title="vite-plugin-vue-devtools"></a>vite-plugin-vue-devtools</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。</p>
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="codeLM的博客" type="application/atom+xml">
+</head><body id="body"><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/Infrastructure/">Infrastructure<sup>2</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2025/03/"><span class="date">2025/03</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2023/03/"><span class="date">2023/03</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/moments/"><i class="solitude  fas fa-wifi"></i><span>朋友圈</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于我</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/Infrastructure/">Infrastructure<sup>2</sup></a></div></div></div></div><div><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="translate" type="button" title="简繁转换">简</button><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">codeLM</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">vite-plugin-vue-devtools</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/moments/"><i class="solitude  fas fa-wifi"></i><span>朋友圈</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于我</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Infrastructure/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Infrastructure</span></a></div></div></div></div><h1 class="post-title">vite-plugin-vue-devtools</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2023-03-26 18:55:44"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2023-03-26T10:55:44.000Z">2023-03-26T10:55:44.000Z</time></span><span class="post-meta-date" title="最后更新于 2025-02-13 18:55:44"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2025-02-13T10:55:44.000Z">2025-02-13T10:55:44.000Z</time></span></div></div></div><div class="post-radius-bottom"></div><article class="post-content article-container"><h1 id="vite-plugin-vue-devtools"><a href="#vite-plugin-vue-devtools" class="headerlink" title="vite-plugin-vue-devtools"></a>vite-plugin-vue-devtools</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。</p>
 <p>vite - plugin - vue - devtools 是一个 Vite 插件。<br>Vite 是一个现代化的前端构建工具，而这个插件是为了在 Vite 构建的 Vue 项目中更好地集成 Vue Devtools 而开发的。</p>
 <h2 id="功能与作用"><a href="#功能与作用" class="headerlink" title="功能与作用"></a>功能与作用</h2><p>它能够确保在 Vite 项目中，Vue Devtools 能够快速、准确地连接到应用程序。在 Vite 的热更新（HMR）过程中，及时地将组件状态更新等信息反馈给 Vue Devtools，使得开发者在使用 Vue Devtools 进行调试时，能够实时观察到组件数据和状态的最新变化。</p>
 <p>当使用 Vite 构建 Vue 应用时，该插件有助于解决一些可能出现的兼容性问题，保证 Vue Devtools 在 Vite 环境下可以顺利地查看组件的 props、data、computed 属性等各种信息。例如，它可以帮助调整 Vite 开发服务器与 Vue Devtools 之间的通信方式，使得在开发过程中能够更加顺畅地利用 Vue Devtools 进行诸如检查组件树结构、监听组件事件等操作。</p>
@@ -148,59 +155,79 @@ initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
 <p> 由于vite插件可以通过pnpm，npm等安装，所以也可以全局安装，这里我们只针对我们现有的项目，做项目的安装，只需要本地调试。<br> 然后，将内容天假到vite.config.ts文件中。<br> 由于项目略有不同，现在就只以运营侧为基准。</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">打开 /build/plugins.<span class="property">ts</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引入</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">VueDevTools</span> <span class="keyword">from</span> <span class="string">&#x27;vite-plugin-vue-devtools&#x27;</span></span><br><span class="line"></span><br><span class="line">并添加到 plugins 中</span><br></pre></td></tr></table></figure>
 <p>如下图</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=b2ec23be4a914eaebff715d0de784fbc.png&path=mdrichtext.picture.&name=1735557247554.png" alt="1735557247666"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=b2ec23be4a914eaebff715d0de784fbc.png&path=mdrichtext.picture.&name=1735557247554.png" alt="1735557247666"></p>
 <p>启动成功后会发现多了 vue-devtools<br><a target="_blank" rel="noopener" href="http://localhost:8848/__devtools__/">http://localhost:8848/__devtools__/</a> 这个地址可以在单独的浏览器中打开调试工具</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=7c38cdef11ef48ec89c73d36add17d3a.png&path=mdrichtext.picture.&name=1735560009053.png" alt="1735560009746"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=7c38cdef11ef48ec89c73d36add17d3a.png&path=mdrichtext.picture.&name=1735560009053.png" alt="1735560009746"></p>
 <p>就是这样！当你用pnpm dev运行应用程序时，你应该在页面底部看到一个小按钮，当你点击它时，它会展开dev tools页面：<br>展示应用程序的快速概览，扩展应用正在使用的 <strong>vue 版本</strong>、<strong>页面</strong>和<strong>组件数量</strong>。</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=aaa8e711f8b94c34b8ec2dee8041d30b.png&path=mdrichtext.picture.&name=1735557492099.png" alt="1735557492218"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=aaa8e711f8b94c34b8ec2dee8041d30b.png&path=mdrichtext.picture.&name=1735557492099.png" alt="1735557492218"></p>
 <p>页面数量和组件数量可变的，当你未登录，点开查看的是未登录的数量，登陆以后获取动态路由，显示的则是获取后的页面数量和组件数量</p>
 <h3 id="组件-components"><a href="#组件-components" class="headerlink" title="组件 components"></a>组件 components</h3><p>Components 展示了你在应用程序使用的组件和它们的层级关系。你可以选中相应的组件来查看它的详细信息(例如 data、props 等)。</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=8d53188d7a4c42c6a98c3d1de4171fee.png&path=mdrichtext.picture.&name=1735557994527.png" alt="1735557994737"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=8d53188d7a4c42c6a98c3d1de4171fee.png&path=mdrichtext.picture.&name=1735557994527.png" alt="1735557994737"></p>
 <h3 id="页面-pages"><a href="#页面-pages" class="headerlink" title="页面 pages"></a>页面 pages</h3><p>Pages 展示了当前注册的路由并且提供了一个快捷的方式进行路由导航。</p>
 <p>对于动态路由，它还提供了一个表单来交互式地填写每个参数。</p>
 <p>你还可以在搜索框输入指定的路径来匹配相应的路由。</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=d088f06e48a14f18a194c6fe7c56d534.png&path=mdrichtext.picture.&name=1735558332874.png" alt="1735558333016"></p>
-<h3 id="时间线-timeline"><a href="#时间线-timeline" class="headerlink" title="时间线 timeline"></a>时间线 timeline</h3><p>这里可以看到鼠标，按键，组件事件，性能<br><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=5e1c81cec0ac4d1a9958a8be98302659.png&path=mdrichtext.picture.&name=1735559301026.png" alt="1735559301278"></p>
-<h3 id="资源-Assets"><a href="#资源-Assets" class="headerlink" title="资源 Assets"></a>资源 Assets</h3><p>Assets 展示了你的静态资源列表(目前只展示 Vite config.publicDir 目录下资源)以及它们的详细信息，你可以在浏览器打开或下载它们。 还可以查看静态资源的内容，路径，大小，下载<br><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=3e5633c9dc7c45618b8d59512cf91e4c.png&path=mdrichtext.picture.&name=1735559355376.png" alt="1735559355537"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=d088f06e48a14f18a194c6fe7c56d534.png&path=mdrichtext.picture.&name=1735558332874.png" alt="1735558333016"></p>
+<h3 id="时间线-timeline"><a href="#时间线-timeline" class="headerlink" title="时间线 timeline"></a>时间线 timeline</h3><p>这里可以看到鼠标，按键，组件事件，性能<br><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=5e1c81cec0ac4d1a9958a8be98302659.png&path=mdrichtext.picture.&name=1735559301026.png" alt="1735559301278"></p>
+<h3 id="资源-Assets"><a href="#资源-Assets" class="headerlink" title="资源 Assets"></a>资源 Assets</h3><p>Assets 展示了你的静态资源列表(目前只展示 Vite config.publicDir 目录下资源)以及它们的详细信息，你可以在浏览器打开或下载它们。 还可以查看静态资源的内容，路径，大小，下载<br><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=3e5633c9dc7c45618b8d59512cf91e4c.png&path=mdrichtext.picture.&name=1735559355376.png" alt="1735559355537"></p>
 <h3 id="路由-routes"><a href="#路由-routes" class="headerlink" title="路由 routes"></a>路由 routes</h3><p>Routes 是一个与 Vue Router 进行集成的功能，它允许你查看你所注册的路由及相关详细信息。</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=1999c68cdefb46e0a61345c7bb17d803.png&path=mdrichtext.picture.&name=1735559688860.png" alt="1735559688982"></p>
-<h3 id="状态管理-pinia"><a href="#状态管理-pinia" class="headerlink" title="状态管理 pinia"></a>状态管理 pinia</h3><p>Pinia 是一个与 Pinia 进行集成的功能，它允许你查看你所注册的模块及相关详细信息。<br><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=734a2115fd4d4740bea86c0372fcec20.png&path=mdrichtext.picture.&name=1735559736080.png" alt="1735559736188"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=1999c68cdefb46e0a61345c7bb17d803.png&path=mdrichtext.picture.&name=1735559688860.png" alt="1735559688982"></p>
+<h3 id="状态管理-pinia"><a href="#状态管理-pinia" class="headerlink" title="状态管理 pinia"></a>状态管理 pinia</h3><p>Pinia 是一个与 Pinia 进行集成的功能，它允许你查看你所注册的模块及相关详细信息。<br><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=734a2115fd4d4740bea86c0372fcec20.png&path=mdrichtext.picture.&name=1735559736080.png" alt="1735559736188"></p>
 <h3 id="依赖图-Graph"><a href="#依赖图-Graph" class="headerlink" title="依赖图 Graph"></a>依赖图 Graph</h3><p>Graph 提供了显示组件之间关系的依赖视图。</p>
-<p><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=67e45c38a1024fc9af7a97142aeac18a.png&path=mdrichtext.picture.&name=1735560273539.png" alt="1735560273788"></p>
-<h3 id="审视-Inspect"><a href="#审视-Inspect" class="headerlink" title="审视 Inspect"></a>审视 Inspect</h3><p>Inspect 集成了 Vite -plugin- Inspect，允许你检查 Vite 的转换步骤。了解每个插件如何转换你的代码并发现潜在问题是很有帮助的。<br><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=de1ddb477f3f4f9bbda09c898c7a2aff.png&path=mdrichtext.picture.&name=1735560468804.png" alt="1735560468955"></p>
+<p><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=67e45c38a1024fc9af7a97142aeac18a.png&path=mdrichtext.picture.&name=1735560273539.png" alt="1735560273788"></p>
+<h3 id="审视-Inspect"><a href="#审视-Inspect" class="headerlink" title="审视 Inspect"></a>审视 Inspect</h3><p>Inspect 集成了 Vite -plugin- Inspect，允许你检查 Vite 的转换步骤。了解每个插件如何转换你的代码并发现潜在问题是很有帮助的。<br><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=de1ddb477f3f4f9bbda09c898c7a2aff.png&path=mdrichtext.picture.&name=1735560468804.png" alt="1735560468955"></p>
 <h3 id="Toggle-Components-Inspector"><a href="#Toggle-Components-Inspector" class="headerlink" title="Toggle Components Inspector"></a>Toggle Components Inspector</h3><p>你也可以使用 Inspector 特性来检查 DOM 树，看看是哪个组件在渲染它。单击以转到特定行的编辑器。使更改更容易，而不需要彻底了解项目结构。</p>
 <p>如果想要单独使用此功能，可以直接安装 vite-plugin-vue-inspector </p>
-<p>此功能，在箭头所指位置，点击可以直接跳转当前点击的组件并在编辑器中打开。 （前提：正确安装，并且路径正确的情况下）<br><img src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=b26f634089f84d748b2ba7b2cf1fd3e3.png&path=mdrichtext.picture.&name=1735560776315.png" alt="1735560776391"></p>
+<p>此功能，在箭头所指位置，点击可以直接跳转当前点击的组件并在编辑器中打开。 （前提：正确安装，并且路径正确的情况下）<br><img src= "" data-lazy-src="https://data.metchain.com/DCP/fileupload/downloadfile.htm?id=b26f634089f84d748b2ba7b2cf1fd3e3.png&path=mdrichtext.picture.&name=1735560776315.png" alt="1735560776391"></p>
 <p>有了以上这些功能，都大大提高了调试速度。以上这些功能，大都是可以单独安装的。</p>
 <p>例如：Vite-plugin-Inspect， vite-plugin-inspect 等</p>
 <p>如果想单独使用某个功能，直接单独安装即可</p>
 <p>注意： </p>
 <p>  插件仅作用域开发模式  安装时添加 -D<br>  仅支持Vue3.0+<br>  目前仅支持单实例Vue应用</p>
-</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/img/logo.png"></div><div class="post-copyright__author_name">John Doe</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">This piece of writing is an original article, utilizing the<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>Agreement. For complete reproduction, please acknowledge the source as Courtesy of<a href="/">Hexo</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Infrastructure/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Infrastructure<span class="tagsPageCount">2</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/24/hello-world/"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/26/plop/"><div class="pagination-info"><div class="label">Next</div><div class="next_info">自动化工具plop</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="Avatar" src="/img/logo.png"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">John Doe</div><div class="desc">只有迎风，风筝才能飞得更高。</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>Table of contents</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vite-plugin-vue-devtools"><span class="toc-text">vite-plugin-vue-devtools</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E4%B8%8E%E4%BD%9C%E7%94%A8"><span class="toc-text">功能与作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6-components"><span class="toc-text">组件 components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2-pages"><span class="toc-text">页面 pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF-timeline"><span class="toc-text">时间线 timeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90-Assets"><span class="toc-text">资源 Assets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1-routes"><span class="toc-text">路由 routes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86-pinia"><span class="toc-text">状态管理 pinia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%9B%BE-Graph"><span class="toc-text">依赖图 Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E8%A7%86-Inspect"><span class="toc-text">审视 Inspect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Toggle-Components-Inspector"><span class="toc-text">Toggle Components Inspector</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>New posts</span></div><div class="aside-list"><a class="aside-list-item" href="/2025/03/24/hello-world/" title="Hello World"><div class="content"><span class="title" href="/2025/03/24/hello-world/" title="Hello World">Hello World</span></div></a><a class="aside-list-item" href="/2023/03/26/devtools/" title="vite-plugin-vue-devtools"><div class="content"><span class="title" href="/2023/03/26/devtools/" title="vite-plugin-vue-devtools">vite-plugin-vue-devtools</span></div></a><a class="aside-list-item" href="/2023/03/26/plop/" title="自动化工具plop"><div class="content"><span class="title" href="/2023/03/26/plop/" title="自动化工具plop">自动化工具plop</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2025 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="/img/pwa/favicon.png">John Doe</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/">Framework: Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude">Theme: Solitude</a></div></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=3.0.15"></script><script src="/js/main.js?v=3.0.15"></script><script src="/js/third_party/waterfall.min.js?v=3.0.15"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/tw_cn.js?v=3.0.15"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>window.paceOptions = {
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src= "" data-lazy-src="/img/logo.png"></div><div class="post-copyright__author_name">codeLM</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div><div class="reward-link mode"><a class="reward-link-button" href="/atom.xml"><i class="solitude fas fa-seedling"></i>订阅</a></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F&amp;title=vite-plugin-vue-devtools&amp;desc=undefined&amp;summary=undefined&amp;site=vite-plugin-vue-devtools&amp;pics=%2Fimg%2Fpwa%2Ffavicon.png" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F&amp;title=vite-plugin-vue-devtools&amp;pic=%2Fimg%2Fpwa%2Ffavicon.png" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F&amp;text=vite-plugin-vue-devtools" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><a class="social-share-ico icon-telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F&amp;text=vite-plugin-vue-devtools" title="分享到Telegram"><i class="solitude fab fa-telegram"></i></a><a class="social-share-ico icon-linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2FcodeLiuMou.github.io%2F2023%2F03%2F26%2Fdevtools%2F&amp;title=vite-plugin-vue-devtools&amp;summary=undefined&amp;source=vite-plugin-vue-devtools" title="分享到LinkedIn"><i class="solitude fab fa-linkedin"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;https://codeLiuMou.github.io/2023/03/26/devtools/&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">codeLM的博客</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Infrastructure/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Infrastructure<span class="tagsPageCount">2</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/25/hello-world/"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/26/plop/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自动化工具plop</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fas fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/2023/03/26/plop/" title="自动化工具plop">
+                    <img class="cover" src= "" data-lazy-src="/var(--default-bg-color)" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">自动化工具plop</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src= "" data-lazy-src="/img/logo.png"></div><div class="description"></div><div class="bottom-group"><span class="left"><div class="name">codeLM</div><div class="desc">只有迎风，风筝才能飞得更高。</div></span><div class="social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vite-plugin-vue-devtools"><span class="toc-text">vite-plugin-vue-devtools</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E4%B8%8E%E4%BD%9C%E7%94%A8"><span class="toc-text">功能与作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6-components"><span class="toc-text">组件 components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2-pages"><span class="toc-text">页面 pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF-timeline"><span class="toc-text">时间线 timeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90-Assets"><span class="toc-text">资源 Assets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1-routes"><span class="toc-text">路由 routes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86-pinia"><span class="toc-text">状态管理 pinia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%9B%BE-Graph"><span class="toc-text">依赖图 Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E8%A7%86-Inspect"><span class="toc-text">审视 Inspect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Toggle-Components-Inspector"><span class="toc-text">Toggle Components Inspector</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2025/03/25/hello-world/" title="Hello World"><div class="content"><span class="title" href="/2025/03/25/hello-world/" title="Hello World">Hello World</span></div></a><a class="aside-list-item" href="/2023/03/26/devtools/" title="vite-plugin-vue-devtools"><div class="content"><span class="title" href="/2023/03/26/devtools/" title="vite-plugin-vue-devtools">vite-plugin-vue-devtools</span></div></a><a class="aside-list-item" href="/2023/03/26/plop/" title="自动化工具plop"><div class="content"><span class="title" href="/2023/03/26/plop/" title="自动化工具plop">自动化工具plop</span></div></a></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span>codeLM</span></div><div class="footer-bar-description">分享技术，一起成长 🚀</div><div><a class="footer-bar-link" href="/about/" title="了解更多">了解更多</a></div></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2026 By<a class="footer-bar-link" href="/" title="codeLM">codeLM</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div class="footer-bar-right"></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script src="https://fastly.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script>window.paceOptions = {
   restartOnPushState: false
 }
 
 utils.addGlobalFn('pjaxSend', () => {
   Pace.restart()
 }, 'pace_restart')
-</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
-    elements: 'a:not([target="_blank"])',
-    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
-    cacheBust: false,
-    analytics: false,
-    scrollRestoration: false
-})
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><script src="/js/fireworks.js"></script><script src="/js/particle.js"></script><script src="/js/mouse-effect.js"></script><script src="/js/glass-card.js"></script><script src="/js/reveal.js"></script><script src="/js/top-progress.js"></script><script src="/js/glass-nav.js"></script><script src="/js/premium-bg.js"></script><script src="/js/gooey-nav.js"></script><script src="/js/cover-fallback.js?v=1"></script><script src="/js/enhance.js?v=1"></script><div class="js-pjax"></div></div><!-- pjax--><script>let pjax = null;
 
-document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-})
+function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        console.warn('Pjax is not loaded yet, retrying...');
+        setTimeout(initPjax, 100);
+        return;
+    }
 
-document.addEventListener('pjax:complete', () => {
-    window.refreshFn()
+    pjax = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    // 将 pjax 实例挂载到全局
+    window.pjax = pjax;
 
     document.querySelectorAll('script[data-pjax]').forEach(item => {
         const newScript = document.createElement('script')
@@ -210,17 +237,36 @@ document.addEventListener('pjax:complete', () => {
         item.parentNode.replaceChild(newScript, item)
     })
 
-    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
 
-})
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
 
-document.addEventListener('pjax:error', (e) => {
-    if (e.request.status === 404) {
-        pjax.loadUrl('/404.html')
-    }
-})</script><!-- google adsense--><!-- search--><!-- music--></body></html>
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--></body></html>
         <script>
-            const posts = ["2025/03/24/hello-world/","2023/03/26/devtools/","2023/03/26/plop/"];
+            const posts = ["2025/03/25/hello-world/","2023/03/26/devtools/","2023/03/26/plop/"];
             function toRandomPost() {
                 const randomPost = posts[Math.floor(Math.random() * posts.length)];
                 pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);

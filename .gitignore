@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build output
+public/
+db.json
+*.log
+
+# Hexo
+.deploy*/
+.deploy_git*/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Temp
+*.tmp
+*.bak
+.cache/
+
+# Browser-sync
+.browsersyncrc

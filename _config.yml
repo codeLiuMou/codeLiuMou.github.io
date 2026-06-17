@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: codeLM的博客
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: codeLM
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://codeLiuMou.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,6 +97,19 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: solitude
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
