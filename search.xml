@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/03/25/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+  </entry>
+  <entry>
+    <title>vite-plugin-vue-devtools</title>
+    <url>/2023/03/26/devtools/</url>
+    <content><![CDATA[vite-plugin-vue-devtools前言之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。
+vite - plugin - vue - devtools 是一个 Vite 插件。Vite 是一个现代化的前端构建工具，而这个插件是为了在 Vite 构建的 Vue 项目中更好地集成 Vue Devtools 而开发的。
+功能与作用它能够确保在 Vite 项目中，Vue Devtools 能够快速、准确地连接到应用程序。在 Vite 的热更新（HMR）过程中，及时地将组件状态更新等信息反馈给 Vue Devtools，使得开发者在使用 Vue Devtools 进行调试时，能够实时观察到组件数据和状态的最新变化。
+当使用 Vite 构建 Vue 应用时，该插件有助于解决一些可能出现的兼容性问题，保证 Vue Devtools 在 Vite 环境下可以顺利地查看组件的 props、data、computed 属性等各种信息。例如，它可以帮助调整 Vite 开发服务器与 Vue Devtools 之间的通信方式，使得在开发过程中能够更加顺畅地利用 Vue Devtools 进行诸如检查组件树结构、监听组件事件等操作。
+安装pnpm add vite-plugin-vue-devtools -D
+ 由于vite插件可以通过pnpm，npm等安装，所以也可以全局安装，这里我们只针对我们现有的项目，做项目的安装，只需要本地调试。 然后，将内容天假到vite.config.ts文件中。 由于项目略有不同，现在就只以运营侧为基准。
+ 打开 /build/plugins.ts//引入import VueDevTools from &#x27;vite-plugin-vue-devtools&#x27;并添加到 plugins 中
+如下图
+
+启动成功后会发现多了 vue-devtoolshttp://localhost:8848/__devtools__/ 这个地址可以在单独的浏览器中打开调试工具
+
+就是这样！当你用pnpm dev运行应用程序时，你应该在页面底部看到一个小按钮，当你点击它时，它会展开dev tools页面：展示应用程序的快速概览，扩展应用正在使用的 vue 版本、页面和组件数量。
+
+页面数量和组件数量可变的，当你未登录，点开查看的是未登录的数量，登陆以后获取动态路由，显示的则是获取后的页面数量和组件数量
+组件 componentsComponents 展示了你在应用程序使用的组件和它们的层级关系。你可以选中相应的组件来查看它的详细信息(例如 data、props 等)。
+
+页面 pagesPages 展示了当前注册的路由并且提供了一个快捷的方式进行路由导航。
+对于动态路由，它还提供了一个表单来交互式地填写每个参数。
+你还可以在搜索框输入指定的路径来匹配相应的路由。
+
+时间线 timeline这里可以看到鼠标，按键，组件事件，性能
+资源 AssetsAssets 展示了你的静态资源列表(目前只展示 Vite config.publicDir 目录下资源)以及它们的详细信息，你可以在浏览器打开或下载它们。 还可以查看静态资源的内容，路径，大小，下载
+路由 routesRoutes 是一个与 Vue Router 进行集成的功能，它允许你查看你所注册的路由及相关详细信息。
+
+状态管理 piniaPinia 是一个与 Pinia 进行集成的功能，它允许你查看你所注册的模块及相关详细信息。
+依赖图 GraphGraph 提供了显示组件之间关系的依赖视图。
+
+审视 InspectInspect 集成了 Vite -plugin- Inspect，允许你检查 Vite 的转换步骤。了解每个插件如何转换你的代码并发现潜在问题是很有帮助的。
+Toggle Components Inspector你也可以使用 Inspector 特性来检查 DOM 树，看看是哪个组件在渲染它。单击以转到特定行的编辑器。使更改更容易，而不需要彻底了解项目结构。
+如果想要单独使用此功能，可以直接安装 vite-plugin-vue-inspector 
+此功能，在箭头所指位置，点击可以直接跳转当前点击的组件并在编辑器中打开。 （前提：正确安装，并且路径正确的情况下）
+有了以上这些功能，都大大提高了调试速度。以上这些功能，大都是可以单独安装的。
+例如：Vite-plugin-Inspect， vite-plugin-inspect 等
+如果想单独使用某个功能，直接单独安装即可
+注意： 
+  插件仅作用域开发模式  安装时添加 -D  仅支持Vue3.0+  目前仅支持单实例Vue应用
+]]></content>
+      <tags>
+        <tag>Infrastructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自动化工具plop</title>
+    <url>/2023/03/26/plop/</url>
+    <content><![CDATA[
+
+​​​plopjs​​​ 是一个基于node js开发的小工具，主要作用是根据模板代码生成目标代码。
+什么是plpo它是一个命令行工具，专门用于构建生成器，这些生成器可以帮助开发者快速生成代码模板，特别是对于大型的后台管理系统，页面很多相似的内容，重复率很高的项目，我们可以设立一个模板（列表、详情、路由等）（vue、js、css文件等），一次构建重复创建。
+用到的文档链接HandlebarsPlop插件plop
+安装1.将plop添加到您的项目npm install plop -D
+
+2.创建入口文件// plop 的入口文件 plopfile.js    // 需要导出一个函数，函数接收一个plop对象，用于创建生成器任务	import &#123; promises as fs &#125; from &#x27;node:fs&#x27;		export default async function (plop) &#123; //导出一个默认函数-异步  	plop.setWelcomeMessage(&#x27;请选择需要创建的模式：&#x27;) // 设置欢迎消息  	const items = await fs.readdir(&#x27;./plop-templates&#x27;)  // 获取plop-templates文件夹下的所有文件  	for (const item of items) &#123;    	const stat = await fs.lstat(`./plop-templates/$&#123;item&#125;`) //使用 fs.lstat 方法获取 plop-templates 文件夹中每个元素的状态（文件或目录），并将结果存储在 stat 变量中。    	if (stat.isDirectory()) &#123; //判断 stat 对象是否表示一个目录。如果是目录，则执行后续代码。     	 const prompt = await import(`./plop-templates/$&#123;item&#125;/prompt.js`) //    	  plop.setGenerator(item, prompt.default)  //循环设置生成器   	 &#125; 	 &#125;	&#125;
+
+
+plop-templates文件夹下的文件夹必须得有prompt.js,要不然执行会报错，上面判断了只有文件夹才会设置生成器别的文件不会设置
+3.添加命令在package.json中添加命令
+
+注意，这里添加完，记得看一下package.json的type是不是module。因为我采用的是es的module模块，并不是 CommonJS。 	//package.json中添加&quot;type&quot;: &quot;module&quot;
+
+添加模板1.在根目录下创建 plop-templates 文件夹
+2.在plop-templates文件夹下创建所需要的模板
+这里创建了3种模板
+3.hbs模板 在对应的文件夹下创建hbs模板（Handlebars模板语法）
+ 
+&#123;&#123;#if isFilesystem&#125;&#125;&lt;route lang=&quot;yaml&quot;&gt;meta:  title: 页面标题&lt;/route&gt;&#123;&#123;/if&#125;&#125;&lt;script setup lang=&quot;ts&quot;&gt;defineOptions(&#123;  name: &#x27;&#123;&#123; properCase componentName &#125;&#125;&#x27;,&#125;)&lt;/script&gt;&lt;template&gt;  &lt;div&gt;    &lt;!-- 布局 --&gt;  &lt;/div&gt;&lt;/template&gt;&lt;style scoped&gt;/* 样式 */&lt;/style&gt;
+
+4.创建对应的生成器文件import fs from &#x27;node:fs&#x27;import path from &#x27;node:path&#x27;function getFolder(path) &#123;  const components = []  const files = fs.readdirSync(path)  files.forEach((item) =&gt; &#123;    console.log(&#x27;item&#x27;,item)    const stat = fs.lstatSync(`$&#123;path&#125;/$&#123;item&#125;`)    if (stat.isDirectory() === true &amp;&amp; item !== &#x27;components&#x27;) &#123;      components.push(`$&#123;path&#125;/$&#123;item&#125;`)      components.push(...getFolder(`$&#123;path&#125;/$&#123;item&#125;`))    &#125;  &#125;)  return components&#125;export default &#123;  description: &#x27;创建页面&#x27;,  prompts: [    &#123;      type: &#x27;list&#x27;,      name: &#x27;path&#x27;,      message: &#x27;请选择页面创建目录&#x27;,      choices: getFolder(&#x27;src/views&#x27;),    &#125;,    &#123;      type: &#x27;input&#x27;,      name: &#x27;name&#x27;,      message: &#x27;请输入文件名&#x27;,      validate: (v) =&gt; &#123;        if (!v || v.trim === &#x27;&#x27;) &#123;          return &#x27;文件名不能为空&#x27;        &#125;        else &#123;          return true        &#125;      &#125;,    &#125;,    &#123;      type: &#x27;confirm&#x27;,      name: &#x27;isFilesystem&#x27;,      message: &#x27;是否为基于文件系统的路由页面&#x27;,      default: false,    &#125;,    &#123;      type: &#x27;confirm&#x27;, // 问题的类型      name: &#x27;hasDetail&#x27;, // 问题对应得到答案的变量名，可以在actions中使用该变量      message: &#x27;是否需要详情抽屉：&#x27;, // 在命令行中的问题      default: true // 问题的默认答案    &#125;,  ],  actions: (data) =&gt; &#123;    const relativePath = path.relative(&#x27;src/views&#x27;, data.path)    const actions = [      &#123;        type: &#x27;add&#x27;, // 操作类型，这里是添加文件        path: `$&#123;data.path&#125;/&#123;&#123;dotCase name&#125;&#125;.vue`,// 模板生成的路径        templateFile: &#x27;plop-templates/page/index.hbs&#x27;,        data: &#123;          componentName: `$&#123;relativePath&#125; $&#123;data.name&#125;`,        &#125;,      &#125;,    ]    if (data.hasDetail) &#123;      actions.push(&#123;        type: &#x27;add&#x27;,        path: `$&#123;data.path&#125;/detail.vue`, // 模板生成的路径        templateFile: &#x27;plop-templates/page/detail.hbs&#x27;, // 模板的路径        data: &#123;          componentName: `$&#123;relativePath&#125; $&#123;data.name&#125;`,        &#125;,      &#125;)    &#125;    return actions  &#125;,&#125;
+
+前期准备工作已经基本完成现在可以在控制台执行命令了
+import fs from &#x27;node:fs&#x27;;import path from &#x27;node:path&#x27;;function getFolder(path) &#123;  const components = [];  const files = fs.readdirSync(path);  files.forEach((item) =&gt; &#123;    const stat = fs.lstatSync(`$&#123;path&#125;/$&#123;item&#125;`);    if (stat.isDirectory() === true &amp;&amp; item !== &#x27;components&#x27;) &#123;      components.push(`$&#123;path&#125;/$&#123;item&#125;`);      components.push(...getFolder(`$&#123;path&#125;/$&#123;item&#125;`));    &#125;  &#125;);  return components;&#125;export default &#123;  description: &#x27;创建页面&#x27;,  prompts: [    &#123;      type: &#x27;list&#x27;,      name: &#x27;path&#x27;,      message: &#x27;请选择页面创建目录&#x27;,      choices: getFolder(&#x27;src/views&#x27;),    &#125;,    &#123;      type: &#x27;input&#x27;,      name: &#x27;name&#x27;,      message: &#x27;请输入文件名&#x27;,      validate: (v) =&gt; &#123;        if (!v || v.trim() === &#x27;&#x27;) &#123;          return &#x27;文件名不能为空&#x27;;        &#125; else &#123;          return true;        &#125;      &#125;,    &#125;,    &#123;      type: &#x27;confirm&#x27;,      name: &#x27;isFilesystem&#x27;,      message: &#x27;是否为基于文件系统的路由页面&#x27;,      default: false,    &#125;,    &#123;      type: &#x27;confirm&#x27;,      name: &#x27;hasDetail&#x27;,      message: &#x27;是否需要详情抽屉：&#x27;,      default: true,    &#125;,  ],  actions: (data) =&gt; &#123;    const relativePath = path.relative(&#x27;src/views&#x27;, data.path);    const actions = [      &#123;        type: &#x27;add&#x27;,        path: `$&#123;data.path&#125;/&#123;&#123;dotCase name&#125;&#125;.vue`,        templateFile: &#x27;plop-templates/page/index.hbs&#x27;,        data: &#123;          componentName: `$&#123;relativePath&#125; $&#123;data.name&#125;`,        &#125;,      &#125;,    ];    if (data.hasDetail) &#123;      actions.push(&#123;        type: &#x27;add&#x27;,        path: `$&#123;data.path&#125;/detail.vue`,        templateFile: &#x27;plop-templates/page/detail.hbs&#x27;,        data: &#123;          componentName: `$&#123;relativePath&#125; $&#123;data.name&#125;`,        &#125;,      &#125;);    &#125;    // 添加 modify 操作    actions.push(&#123;      type: &#x27;modify&#x27;,      path: &#x27;src/router/index.js&#x27;,      pattern: /const routes = \[/,      template: `const routes = [\n  $1  &#123;\n    path: &#x27;/$&#123;data.name&#125;&#x27;,\n    name: &#x27;$&#123;data.name&#125;&#x27;,\n    component: () =&gt; import(&#x27;../views/$&#123;relativePath&#125;/$&#123;data.name&#125;.vue&#x27;),\n  &#125;,`,    &#125;);    return actions;  &#125;,&#125;;]]></content>
+      <tags>
+        <tag>Infrastructure</tag>
+      </tags>
+  </entry>
+</search>
