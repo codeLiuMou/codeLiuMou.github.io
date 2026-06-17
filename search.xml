@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/03/25/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+  </entry>
+  <entry>
     <title>vite-plugin-vue-devtools</title>
     <url>/2023/03/26/devtools/</url>
     <content><![CDATA[vite-plugin-vue-devtools前言之前的版本工具webpack使用的是浏览器的插件vue-devtools，可能大家都不陌生，但是有些同学由于网络问题无法下载安装插件，所以今天给大家推荐一款更好用的插件 vite-plugin-vue-devtools，无需浏览器安装。
@@ -76,23 +94,5 @@ import fs from &#x27;node:fs&#x27;;import path from &#x27;node:path&#x27;;functi
       <tags>
         <tag>Infrastructure</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/03/25/hello-world/</url>
-    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server$ hexo server
-
-More info: Server
-Generate static files$ hexo generate
-
-More info: Generating
-Deploy to remote sites$ hexo deploy
-
-More info: Deployment
-]]></content>
   </entry>
 </search>
